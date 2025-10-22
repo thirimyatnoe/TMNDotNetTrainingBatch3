@@ -42,13 +42,11 @@ namespace ADONet
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 var row = dt.Rows[i];
-                //Console.WriteLine(row["ProductId"]);
+              
                 int rowNo = i + 1;
                 decimal price = Convert.ToDecimal(row["Price"]);
                 Console.WriteLine(rowNo.ToString() + ". " + row["ProductName"] + "(" + price.ToString("n0") + ")");
-                //Console.WriteLine(row["Quantity"]);
-                //Console.WriteLine("Price =>" +row["Price"]);
-                // Console.WriteLine("--------------------------------------");
+              
 
             }
             Console.ReadLine();
@@ -56,21 +54,25 @@ namespace ADONet
         public void Create() 
         {
             string query = @"INSERT INTO [dbo].[tbl_Product]
-           ([ProductName]
-           ,[Quantity]
-           ,[Price]
-           ,[DeleteFlag])
-     VALUES
-           ('Test'
-           ,100
-           ,1000
-           ,0)";
+                           ([ProductName]
+                           ,[Quantity]
+                           ,[Price]
+                           ,[DeleteFlag] 
+                           ,[CreatedDateTime]
+                           ,[ModifiedDateTime])
+                     VALUES
+                           ('WaterMelon'
+                           ,350
+                           ,3500
+                           ,False
+                           ,GETDATE()
+                           ,GETDATE())";
             SqlConnection connection = new SqlConnection(sqlconnectionStringBuilder.ConnectionString);
             connection.Open();
             SqlCommand cmd=new SqlCommand(query, connection);
             int result = cmd.ExecuteNonQuery();
             connection.Close();
-            string message = result > 0 ? "Saving Successful." : "Saving Failed.";
+            string message = result > 0 ? "Save Product Successful." : "Save Product Failed.";
        
             Console.WriteLine(message);
         }
@@ -78,17 +80,18 @@ namespace ADONet
         public void Update()
         {
             string query = @"UPDATE [dbo].[tbl_Product]
-   SET [ProductName] = 'Test Update'
-      ,[Quantity] = 2
-      ,[Price] = 400
-      ,[DeleteFlag] = 0
- WHERE ProductID=4;";
+                           SET [ProductName] = 'Test Update'
+                              ,[Quantity] = 2
+                              ,[Price] = 400
+                              ,[DeleteFlag] = 0
+                              ,[ModifiedDateTime] =GetDate()
+                         WHERE ProductID=6";
             SqlConnection connection = new SqlConnection(sqlconnectionStringBuilder.ConnectionString);
             connection.Open();
             SqlCommand cmd = new SqlCommand(query, connection);
             int result = cmd.ExecuteNonQuery();
             connection.Close();
-            string message = result > 0 ? "Update Successful." : "Update Failed.";
+            string message = result > 0 ? "Update Product Successful." : "Update Product Failed.";
 
             Console.WriteLine(message);
 
@@ -96,13 +99,15 @@ namespace ADONet
         }
         public void Delete() 
         {
-            string query = @"Delete From  tbl_Product WHERE ProductID=2;";
+            string query = @"UPDATE [dbo].[tbl_Product]
+                           SET [DeleteFlag] = 1
+                           WHERE ProductID=6";
             SqlConnection connection = new SqlConnection(sqlconnectionStringBuilder.ConnectionString);
             connection.Open();
             SqlCommand cmd = new SqlCommand(query, connection);
             int result = cmd.ExecuteNonQuery();
             connection.Close();
-            string message = result > 0 ? "Delete Successful." : "Delete Failed.";
+            string message = result > 0 ? "Delete Product Successful." : "Delete Product Failed.";
 
             Console.WriteLine(message);
 

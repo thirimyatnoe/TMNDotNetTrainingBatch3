@@ -30,7 +30,7 @@ namespace DapperService
                               ,[Quantity]
                               ,[Price]
                               ,[DeleteFlag]
-                               FROM [testpos].[dbo].[tbl_Product]";
+                               FROM [testpos].[dbo].[tbl_Product] where DeleteFlag=0 ";
                List<ProductDTO> lst= db.Query<ProductDTO>(query).ToList();
 
                 for (int i = 0; i < lst.Count; i++) 
@@ -48,12 +48,12 @@ namespace DapperService
             {
                 db.Open();
 
-                string query = @"INSERT INTO [dbo].[tbl_Product] ([ProductName],[Quantity],[Price],[DeleteFlag]) 
-                                VALUES('Banana' ,200,1000,0)";
+                string query = @"INSERT INTO [dbo].[tbl_Product] ([ProductName],[Quantity],[Price],[DeleteFlag],[CreatedDateTime],[ModifiedDateTime]) 
+                                VALUES('Banana Dapper' ,200,1000,0,GetDate(),GetDate())";
                
                 db.Execute(query);
                 int result =db.Execute(query);
-                string message = result > 0 ? "Saving Successful." : "Saving Failed.";
+                string message = result > 0 ? "Save Product Successful." : "Save Product Failed.";
                 Console.WriteLine(message);
 
             }
@@ -68,7 +68,7 @@ namespace DapperService
 
                 string query = @"UPDATE [dbo].[tbl_Product]
                                SET [ProductName] = 'Test Update From Dapper' ,[Quantity] = 2,[Price] = 200,[DeleteFlag] = 0
-                               WHERE ProductID=4;";
+                               WHERE ProductID=4";
 
                 db.Execute(query);
                 int result = db.Execute(query);
@@ -84,8 +84,10 @@ namespace DapperService
             {
                 db.Open();
 
-                string query = @"Delete From  tbl_Product WHERE ProductID=8;";
-                
+                string query = @"UPDATE [dbo].[tbl_Product]
+                               SET [DeleteFlag] = 1
+                               WHERE ProductID=4";
+
                 db.Execute(query);
                 int result = db.Execute(query);
                 string message = result > 0 ? "Delete Successful." : "Delete Failed.";

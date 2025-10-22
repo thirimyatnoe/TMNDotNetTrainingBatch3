@@ -3,7 +3,14 @@ using DapperService;
 
 Console.WriteLine("Hello,Product Dapper Service!");
 ProductDapperService productService = new ProductDapperService();
-//productService.Read();
+
 //productService.Create();
 //productService.Update();
-productService.Delete();
+//productService.Delete();
+productService.Read();
+SaleDapperService saleService = new SaleDapperService();
+
+//saleService.Create();
+
+saleService.Read();
+Console.ReadLine();

@@ -19,6 +19,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<TblProductCategory> TblProductCategories { get; set; }
 
+    public virtual DbSet<TblSale> TblSales { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=DESKTOP-T9TCP3A\\SQL2014;Database=testpos;User ID = sa;Password = global;TrustServerCertificate=True;");
@@ -51,6 +53,20 @@ public partial class AppDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.ProductCategoryName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TblSale>(entity =>
+        {
+            entity.HasKey(e => e.SaleId);
+
+            entity.ToTable("tbl_Sale");
+
+            entity.Property(e => e.CreatedDateTime).HasColumnType("datetime");
+            entity.Property(e => e.ModifiedDateTime).HasColumnType("datetime");
+            entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.ProductId)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });

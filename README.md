@@ -31,3 +31,10 @@ dotnet tool install --global dotnet-ef
 
 -f replace for all table and content
 dotnet ef dbcontext scaffold "Server=DESKTOP-T9TCP3A\SQL2014;Database=testpos;User ID = sa;Password = global;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o AppDbContextModels -c AppDbContext -f
+
+Homework
+ADO.net
+Dapper
+EFCore DatabaseFirst
+
+sale Create,Read
