@@ -27,11 +27,11 @@ namespace ADONet
             connection.Open();
 
             string query = @"SELECT [ProductId]
-      ,[ProductName]
-      ,[Quantity]
-      ,[Price]
-      ,[DeleteFlag]
-  FROM [testpos].[dbo].[tbl_Product]";
+                          ,[ProductName]
+                          ,[Quantity]
+                          ,[Price]
+                          ,[DeleteFlag]
+                          FROM [testpos].[dbo].[tbl_Product]";
 
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -80,9 +80,9 @@ namespace ADONet
             string query = @"UPDATE [dbo].[tbl_Product]
    SET [ProductName] = 'Test Update'
       ,[Quantity] = 2
-      ,[Price] = 200
+      ,[Price] = 400
       ,[DeleteFlag] = 0
- WHERE ProductID=3;";
+ WHERE ProductID=4;";
             SqlConnection connection = new SqlConnection(sqlconnectionStringBuilder.ConnectionString);
             connection.Open();
             SqlCommand cmd = new SqlCommand(query, connection);

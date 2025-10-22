@@ -1,2 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using DapperService;
+
+Console.WriteLine("Hello,Product Dapper Service!");
+ProductDapperService productService = new ProductDapperService();
+//productService.Read();
+//productService.Create();
+//productService.Update();
+productService.Delete();

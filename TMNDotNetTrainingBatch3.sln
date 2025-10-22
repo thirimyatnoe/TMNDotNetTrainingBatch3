@@ -9,7 +9,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADONet", "ADONet\ADONet.csproj", "{17ABEE24-AA06-80A2-9461-38C012EB1C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperService", "DapperTMN\DapperService.csproj", "{368770DD-2FFB-48F5-930A-C8755AFB4A69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperService", "DapperService\DapperService.csproj", "{6484A34F-E80D-93FA-AA4F-91D840F3C8DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreModelFirst", "EFCoreModelFirst\EFCoreModelFirst.csproj", "{6FF0435F-2C70-4009-99A7-1AD372483D5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDatabaseFirst.Database", "EFCoreDatabaseFirst.Database\EFCoreDatabaseFirst.Database.csproj", "{E0D76C60-A08F-4B6F-AA3A-4E48BD6A94B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDatabaseFirst", "EFCoreDatabaseFirst\EFCoreDatabaseFirst.csproj", "{3206FF1C-76AC-4BE8-9C53-D96E1FD7065E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +41,22 @@ Global
 		{17ABEE24-AA06-80A2-9461-38C012EB1C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17ABEE24-AA06-80A2-9461-38C012EB1C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17ABEE24-AA06-80A2-9461-38C012EB1C11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{368770DD-2FFB-48F5-930A-C8755AFB4A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{368770DD-2FFB-48F5-930A-C8755AFB4A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{368770DD-2FFB-48F5-930A-C8755AFB4A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{368770DD-2FFB-48F5-930A-C8755AFB4A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6484A34F-E80D-93FA-AA4F-91D840F3C8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6484A34F-E80D-93FA-AA4F-91D840F3C8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6484A34F-E80D-93FA-AA4F-91D840F3C8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6484A34F-E80D-93FA-AA4F-91D840F3C8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF0435F-2C70-4009-99A7-1AD372483D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF0435F-2C70-4009-99A7-1AD372483D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF0435F-2C70-4009-99A7-1AD372483D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF0435F-2C70-4009-99A7-1AD372483D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D76C60-A08F-4B6F-AA3A-4E48BD6A94B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D76C60-A08F-4B6F-AA3A-4E48BD6A94B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D76C60-A08F-4B6F-AA3A-4E48BD6A94B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D76C60-A08F-4B6F-AA3A-4E48BD6A94B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3206FF1C-76AC-4BE8-9C53-D96E1FD7065E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3206FF1C-76AC-4BE8-9C53-D96E1FD7065E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3206FF1C-76AC-4BE8-9C53-D96E1FD7065E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3206FF1C-76AC-4BE8-9C53-D96E1FD7065E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
