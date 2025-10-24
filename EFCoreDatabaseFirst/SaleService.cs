@@ -15,7 +15,8 @@ namespace EFCoreDatabaseFirst
         {
             AppDbContext db = new AppDbContext();
 
-            var lst = db.TblSales.Where(x => x.DeleteFlag == false).ToList();
+
+            List<TblSale> lst = db.TblSales.Where(x => x.DeleteFlag == false).ToList();
 
             for (int i = 0; i < lst.Count; i++)
             {
